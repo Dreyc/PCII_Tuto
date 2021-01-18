@@ -1,4 +1,4 @@
-package Main;
+package Tuto_Part_1;
 
 /**
  * Classe d'etat, gere toutes les actions que l'ovale doit faire ainsi que toutes les informations concernant

@@ -1,4 +1,4 @@
-package Main;
+package Tuto_Part_1;
 
 import javax.swing.*;
 import java.awt.*;
