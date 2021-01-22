@@ -1,5 +1,5 @@
-import Tuto_Part_1.Affichage;
-import Tuto_Part_1.Etat;
+import PCII_Tuto.Affichage;
+import PCII_Tuto.Etat;
 
 public class Main {
 

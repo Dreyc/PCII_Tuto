@@ -1,4 +1,4 @@
-package Tuto_Part_1;
+package PCII_Tuto;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
