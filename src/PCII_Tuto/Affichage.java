@@ -8,19 +8,18 @@ import java.awt.*;
  */
 public class Affichage extends JPanel {
 
-    //Definition de l'etat que nous allons utiliser
+    //Definition de l'Eetat que nous allons utiliser
     public static Etat etat;
 
-    /*** Constante : Largeur de la fenetre ***/
+    /** Constante : Largeur de la fenetre **/
     public static final int WIDTH_WINDOW = 600;
-    /*** Constante : Hauteur de la fenetre ***/
+    /** Constante : Hauteur de la fenetre **/
     public static final int HEIGHT_WINDOW = 400;
-
-    /*** Constante : Largeur de l'ovale ***/
+    /** Constante : Largeur de l'ovale **/
     public static int LARGEUR_OVALE = 20;
-    /*** Constante : Hauteur de l'ovale ***/
+    /** Constante : Hauteur de l'ovale **/
     public static int HAUTEUR_OVALE = 60;
-    /*** Constante : Coordonnée X du centre de l'ovale ***/
+    /** Constante : Coordonnée X du centre de l'ovale **/
     public static int CENTRE_X_OVALE = 50;
 
     /**
@@ -52,14 +51,16 @@ public class Affichage extends JPanel {
      */
     @Override
     public void paint(Graphics g) {
+        //Nettoie l'affichage
         g.clearRect(0, 0, WIDTH_WINDOW, HEIGHT_WINDOW);
         //Nettoie l'affichage
         super.paint(g);
         //Dessine l'ovale
         g.drawOval(CENTRE_X_OVALE, etat.get_hauteur(), LARGEUR_OVALE, HAUTEUR_OVALE);
-
+        //Initialise le tableau de point qui constituent le parcours
         Point[] point = etat.getParcours();
-        System.out.println(point[0].x);
+
+        //Dessine une ligne avec un couple de points
         for (int i = 1; i < point.length; i++) {
             Point previous_point = point[i-1];
             Point current_point = point[i];

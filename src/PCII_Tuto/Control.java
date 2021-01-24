@@ -7,7 +7,9 @@ import java.awt.event.MouseListener;
  * Classe de controle de tous les MouseEvent, chaque action que fait l'utilisateur est interpreté ici
  */
 public class Control implements MouseListener {
+        //Initialise un Etat
         public static Etat etat;
+        //Initialise un Affichage
         public static Affichage affichage;
 
         public Control (Etat etat, Affichage affichage) {
