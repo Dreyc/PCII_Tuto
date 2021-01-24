@@ -38,7 +38,7 @@ public class Parcours {
     }
 
     /**
-     * Getter qui renvoie la un tableau contenant tous les points du Parcours actuel
+     * Getter qui renvoie la un tableau contenant tous les points du Parcours actuel en changeant les x pour faire avanacer la ligne
      * @return Un tableau de points
      */
     public Point[] getParcours() {
