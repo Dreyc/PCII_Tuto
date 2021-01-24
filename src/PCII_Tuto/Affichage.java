@@ -11,28 +11,31 @@ public class Affichage extends JPanel {
     //Definition de l'etat que nous allons utiliser
     public static Etat etat;
 
-    //Dimensions utilisees pour la fenetre
-    public static final int width = 600;
-    public static final int height = 400;
+    /*** Constante : Largeur de la fenetre ***/
+    public static final int WIDTH_WINDOW = 600;
+    /*** Constante : Hauteur de la fenetre ***/
+    public static final int HEIGHT_WINDOW = 400;
 
-    //Dimensions Ovale
-    public static int largeur = 20;
-    public static int hauteur = 30;
-    public static int centreX = 50;
+    /*** Constante : Largeur de l'ovale ***/
+    public static int LARGEUR_OVALE = 20;
+    /*** Constante : Hauteur de l'ovale ***/
+    public static int HAUTEUR_OVALE = 60;
+    /*** Constante : Coordonnée X du centre de l'ovale ***/
+    public static int CENTRE_X_OVALE = 50;
 
     /**
      * Initialise un affichage, cree une fenetre ainsi que tous ses parametres et cree le MouseListener
      * @param e un etat
      */
     public Affichage( Etat e) {
-
+        (new Affichage2(this)).start();
         this.etat = e;
         //Initialisation d'un nouveau JFrame
         JFrame test = new JFrame("Test Dessin");
         //Initialise la valeur par defaut du JFrame a EXIT_ON_CLOSE
         test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Defini la taille de notre fenetre
-        setPreferredSize(new Dimension(width, height));
+        setPreferredSize(new Dimension(WIDTH_WINDOW, HEIGHT_WINDOW));
         //Ajoute un composant au JFrame, ici l'etat
         test.add( this);
         //Initialise le MouseListener
@@ -49,10 +52,20 @@ public class Affichage extends JPanel {
      */
     @Override
     public void paint(Graphics g) {
+        g.clearRect(0, 0, WIDTH_WINDOW, HEIGHT_WINDOW);
         //Nettoie l'affichage
         super.paint(g);
         //Dessine l'ovale
-        g.drawOval(centreX, etat.get_hauteur(), largeur, hauteur);
+        g.drawOval(CENTRE_X_OVALE, etat.get_hauteur(), LARGEUR_OVALE, HAUTEUR_OVALE);
+
+        Point[] point = etat.getParcours();
+        System.out.println(point[0].x);
+        for (int i = 1; i < point.length; i++) {
+            Point previous_point = point[i-1];
+            Point current_point = point[i];
+            g.drawLine(previous_point.x, previous_point.y, current_point.x, current_point.y);
+        }
+
     }
 
 }

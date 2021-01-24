@@ -1,4 +1,9 @@
 package PCII_Tuto;
 
-public class Avancer {
+public class Avancer extends Thread {
+
+    @Override
+    public void run() {
+
+    }
 }
