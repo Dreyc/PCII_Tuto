@@ -1,6 +1,5 @@
 import PCII_Tuto.Affichage;
 import PCII_Tuto.Etat;
-import PCII_Tuto.Parcours;
 
 public class Main {
 

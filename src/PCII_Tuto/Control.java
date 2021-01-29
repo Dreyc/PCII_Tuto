@@ -3,9 +3,6 @@ package PCII_Tuto;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-/**
- * Classe de controle de tous les MouseEvent, chaque action que fait l'utilisateur est interpreté ici
- */
 public class Control implements MouseListener {
         //Initialise un Etat
         public static Etat etat;
