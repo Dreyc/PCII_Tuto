@@ -1,3 +1,5 @@
+package PCII_Tuto;
+
 import PCII_Tuto.Affichage;
 import PCII_Tuto.Etat;
 
